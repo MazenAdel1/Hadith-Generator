@@ -23,6 +23,7 @@ body {
   background-image: url("./imgs/img-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
 header {
   display: flex;
