@@ -50,9 +50,13 @@ loveButton.onclick = function () {
   if (loveButton.classList.contains(`red`)) {
     addHadithsToArray(hadith.textContent);
     createHadtih(arrayOfHadiths);
-  } else {
-    removeFromLocalStorage(hadith.textContent);
+  } else if (
+    hadith.textContent ==
+      favList.children[favList.children.length - 1].textContent &&
+    !loveButton.classList.contains(`red`)
+  ) {
     favList.children[favList.children.length - 1].remove();
+    removeFromLocalStorage(hadith.textContent);
   }
 };
 
@@ -102,7 +106,6 @@ function addHadithsToArray(hadithText) {
     text: hadithText,
   };
   arrayOfHadiths.push(hadithObj);
-  console.log(arrayOfHadiths);
   addToLocalStorage(arrayOfHadiths);
 }
 
